@@ -2,9 +2,9 @@ services:
   postgres:
     image: postgres:latest
     environment:
-      POSTGRES_DB: skillsrock_db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: danik22081
+      POSTGRES_DB: user_db
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
     ports:
       - "5432:5432"
     networks:
@@ -21,9 +21,9 @@ services:
     image: parodia/testtask:latest
     environment:
       - SPRING_PROFILES_ACTIVE=dockermvn
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/skillsrock_db
-      - SPRING_DATASOURCE_USERNAME=postgres
-      - SPRING_DATASOURCE_PASSWORD=danik22081
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/user_db
+      - SPRING_DATASOURCE_USERNAME=username
+      - SPRING_DATASOURCE_PASSWORD=password
       - SPRING_DATA_REDIS_HOST=redis
       - SPRING_DATA_REDIS_PORT=6379
       - SPRING_LIQUIBASE_CHANGE_LOG=classpath:db/changelog/db.changelog-master.yaml
