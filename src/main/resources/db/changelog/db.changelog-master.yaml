@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - include:
+      file: changeset/create-schema.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: changeset/insert-default-roles.yaml
+      relativeToChangelogFile: true

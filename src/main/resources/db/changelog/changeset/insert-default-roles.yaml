@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-default-roles
+      author: Makushev
+      changes:
+        - sql:
+            sql: |
+              INSERT INTO roles (UUID, role_name)
+              VALUES ('1500f9a8-6b6f-4258-97e3-0d7636815ee0', 'USER')
+              ON CONFLICT (UUID) DO NOTHING;
+
+              INSERT INTO roles (UUID, role_name)
+              VALUES ('0704964e-2fb3-4e67-9290-9c48d24456ba', 'ADMIN')
+              ON CONFLICT (UUID) DO NOTHING;
